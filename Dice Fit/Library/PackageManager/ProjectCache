@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637516739106112361
+      ticks: 637516743896075513
     m_Hash: 2167679125
   m_LockFileStatus:
     m_FilePath: C:/Users/Ryoma Fushiki/Documents/GitHub/2021_c/Dice Fit/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637516739119305046
+      ticks: 637517537759714122
     m_Hash: 3770407735
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
