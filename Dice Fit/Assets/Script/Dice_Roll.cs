@@ -20,7 +20,7 @@ public class Dice_Roll : MonoBehaviour
     EDiceMode dMode = EDiceMode.NORMAL_DICE;
     private int dNumMin = 0;
     private int dNumMax = 6;
-    private GameObject Player1;
+    private GameObject GameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +32,7 @@ public class Dice_Roll : MonoBehaviour
         images_123 = Resources.LoadAll<Sprite>("Image/Dice/123_Dice");
         images_456 = Resources.LoadAll<Sprite>("Image/Dice/456_Dice");
         images = images_Normal;
-        Player1 = GameObject.Find("Player");
+        GameManager = GameObject.Find("GameManager");
     }
 
     // Update is called once per frame
@@ -88,7 +88,7 @@ public class Dice_Roll : MonoBehaviour
             }
             else
             {
-                Player1.GetComponent<PlayerMovement>().PlayerMove(preNum+1);
+                GameManager.GetComponent<PlayerMovement>().GoEvent(preNum + 1);
                 Debug.Log(preNum + 1);
                 isRandom = false;
             }
