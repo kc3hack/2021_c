@@ -21,6 +21,9 @@ public class Dice_Roll : MonoBehaviour
     private int dNumMin = 0;
     private int dNumMax = 6;
     private GameObject GameManager;
+    PlayerMovement playerMovement;
+
+    [SerializeField] GameObject ItemSelectWindow;
 
     // Start is called before the first frame update
     void Start()
@@ -33,45 +36,16 @@ public class Dice_Roll : MonoBehaviour
         images_456 = Resources.LoadAll<Sprite>("Image/Dice/456_Dice");
         images = images_Normal;
         GameManager = GameObject.Find("GameManager");
-    }
 
+        playerMovement = GetComponent<PlayerMovement>();
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
-        {
-            dMode = EDiceMode.NORMAL_DICE;
-            images = images_Normal;
-            diceImage.sprite = images[0];
-            dNumMin = 0;
-            dNumMax = 6;
-        }
-        else if (Input.GetKey(KeyCode.B))
-        {
-            dMode = EDiceMode.DICE_OTT;
-            images = images_123;
-            diceImage.sprite = images[0];
-            dNumMin = 0;
-            dNumMax = 3;
-        }
-        else if (Input.GetKey(KeyCode.C))
-        {
-            dMode = EDiceMode.DICE_FFS;
-            images = images_456;
-            diceImage.sprite = images[0];
-            dNumMin = 3;
-            dNumMax = 6;
-        }
-
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            OnClickDice();
-        }
 
         if (isRandom)
         {
-            //ƒTƒCƒRƒ‚ª“®‚¢‚Ä‚¢‚éŠÔ‚Íí‚Énum‚ğXV‚µA~‚Ü‚é’¼‘O‚Ì’l‚ğpreNum‚ÉŠi”[‚·‚é
+            //ï¿½Tï¿½Cï¿½Rï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½Ô‚Íï¿½ï¿½numï¿½ï¿½ï¿½Xï¿½Vï¿½ï¿½ï¿½Aï¿½~ï¿½Ü‚é’¼ï¿½Oï¿½Ì’lï¿½ï¿½preNumï¿½ÉŠiï¿½[ï¿½ï¿½ï¿½ï¿½
             if (!rb2D.IsSleeping())
             {
                 int num = Random.Range(dNumMin, dNumMax);
@@ -91,6 +65,7 @@ public class Dice_Roll : MonoBehaviour
                 GameManager.GetComponent<PlayerMovement>().GoEvent(preNum + 1);
                 Debug.Log(preNum + 1);
                 isRandom = false;
+                SetnormalDice();
             }
         }
     }
@@ -104,7 +79,7 @@ public class Dice_Roll : MonoBehaviour
     }
 
 
-    //ƒNƒŠƒbƒN‚ÅŒÄ‚ÔŠO•”ƒXƒNƒŠƒvƒg‚©‚ç‚Å‚à‰Â
+    //ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ÅŒÄ‚ÔŠOï¿½ï¿½ï¿½Xï¿½Nï¿½ï¿½ï¿½vï¿½gï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½
     public void OnClickDice()
     {
         if (rb2D.IsSleeping() && !isRandom)
@@ -114,4 +89,37 @@ public class Dice_Roll : MonoBehaviour
         }
     }
 
+    public void SetnormalDice(){
+        dMode = EDiceMode.NORMAL_DICE;
+        images = images_Normal;
+        //diceImage.sprite = images[0];
+        dNumMin = 0;
+        dNumMax = 6;
+    }
+    public void Set123Dice()
+    {   
+        dMode = EDiceMode.DICE_OTT;
+        images = images_123;
+        diceImage.sprite = images[0];
+        dNumMin = 0;
+        dNumMax = 3;
+    }
+    public void Set456Dice()
+    {
+        dMode = EDiceMode.DICE_FFS;
+        images = images_456;
+        diceImage.sprite = images[0];
+        dNumMin = 3;
+        dNumMax = 6;
+    }
+
+    public void ShowWindow(){
+        ItemSelectWindow.SetActive(true);
+        playerMovement.SaiText123.text = "123sai Ã—" + playerMovement.sai123[playerMovement.currentPlayer];
+        playerMovement.SaiText456.text = "456sai Ã—" + playerMovement.sai456[playerMovement.currentPlayer];
+    }
+
+    public void HideWindow(){
+        ItemSelectWindow.SetActive(false);
+    }
 }

@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Select_Menu.unity
     guid: 2e8343a0d1fe94f4a9ea1b047f9256ed
   - enabled: 1
-    path: Assets/PlayerMovement.unity
+    path: Assets/Scenes/PlayerMovement.unity
     guid: 146aa4e5e87234af889d7eed74a29095
   m_configObjects: {}
