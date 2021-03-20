@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PlayerMovement.unity
     guid: 146aa4e5e87234af889d7eed74a29095
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: f00dbea0ab132d840ad1225b0b662e75
   m_configObjects: {}
