@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour, IPointerClickHandler
     public int[] currentMasuIndex;//プレイヤーごとのどこのますにいるかの配列
     public int positionTmp;//移動前の位置情報一時保存
     public int currentPlayer = 0;//今どのプレイヤーかどうか
+    public int[] sai123;
+    public int[] sai456;
+
     bool ダイス振れる;
     [SerializeField] Text playerInfomationText;
 
@@ -22,6 +25,8 @@ public class PlayerMovement : MonoBehaviour, IPointerClickHandler
         ダイス振れる = true;
         currentMasuIndex = new int[Players.Length];//プレイヤーの位置情報
         GoalPlayer = new bool[Players.Length];
+        sai123 = new int[Players.Length];
+        sai456 = new int[Players.Length];
     }
 
     public int ChangePlayer (int currentPlayer,int NumPlayer)//プレイヤー交代
@@ -69,11 +74,12 @@ public class PlayerMovement : MonoBehaviour, IPointerClickHandler
         
         
         //ここからマスのイベント開始！！！
-        Debug.Log(currentPlayer);
-        Debug.Log(currentMasuIndex[currentPlayer]);
-        Debug.Log(MassGameObjects[currentMasuIndex[currentPlayer]]);
-        MassGameObjects[currentMasuIndex[currentPlayer]].GetComponent<masusyori>().ActiveCellEvent(this, currentPlayer,playerInfomationText);
-        
+
+        MassGameObjects[currentMasuIndex[currentPlayer]].GetComponent<masusyori>().ActiveCellEvent(this, currentPlayer,playerInfomationText,sai123,sai456);
+        Debug.Log(sai123[currentPlayer]);
+        Debug.Log(sai456[currentPlayer]);
+
+        //nextplayer
         currentPlayer = ChangePlayer(currentPlayer,Players.Length-1);
         if(GoalPlayer[currentPlayer])//Goalしたプレイヤーをスキップ
         {

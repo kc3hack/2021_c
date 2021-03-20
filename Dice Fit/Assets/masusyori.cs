@@ -18,6 +18,8 @@ public class masusyori : MonoBehaviour
     [SerializeField] Color blue;
     [SerializeField] Color red;
     [SerializeField] Color yellow;
+    [SerializeField] Color goal;
+    [SerializeField] Color start;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,12 +40,18 @@ public class masusyori : MonoBehaviour
             case KindOfEvent.yellow:
                 sp.color = yellow;
                 break;
+            case KindOfEvent.goal:
+                sp.color = goal;
+                break;
+            case KindOfEvent.start:
+                sp.color = start;
+                break;
             default:
                 break;
         }
     }
 
-    public void ActiveCellEvent(PlayerMovement player,int playernumber, Text text){
+    public void ActiveCellEvent(PlayerMovement player,int playernumber, Text text, int[] sai123, int[] sai456){
 
         switch (kindOfEvent)
         {
@@ -59,9 +67,24 @@ public class masusyori : MonoBehaviour
                 //黄mass
                 text.text = playernumber + "は黄マスに止まりました";
                 //ここから沼
-                
+                int itemrand = Random.Range(0, 100);
+                if (itemrand > 50)
+                {
+                    sai123[playernumber]++;
+                    text.text = playernumber + "は一二三賽を手に入れた";
+                }else
+                {
+                    sai456[playernumber]++;
+                    text.text = playernumber + "は四五六賽を手に入れた";
+                }
 
 
+                break;
+            case KindOfEvent.goal:
+                //赤mass
+                text.text = playernumber + "はゴールに止まりました";
+                break;
+            case KindOfEvent.start:
                 break;
             default:
                 break;
