@@ -64,7 +64,8 @@ Unity Recorder/
 LastSceneManagerSetup.txt
 CollabSnapshot_a798e656-23db-4046-8122-72feda6ff870.txt
 *.cache
-Library\Artifacts\
+\Library\Artifacts\
+/Library/Artifacts/
 
 #Comflict
 *.log
