@@ -74,6 +74,9 @@ CollabSnapshot_a798e656-23db-4046-8122-72feda6ff870.txt
 *.7z
 *.driveupload
 Dice Fit/Library/Artifacts/2d/2d7f0abaa2b3a6284825c37a04a32e40
-Dice Fit/Library/Artifacts/
-Dice Fit/Library/Artifacts/*
+#Dice Fit/Library/Artifacts/
+#Dice Fit/Library/Artifacts/*
 
+#Dice Fit/Library/Artifacts/9f/9fb0536a28983ccbdd735fa34b82fa31
+#Dice Fit/Library/Artifacts/a1/a1864ba7d0ace5f66c2baa5ba4d092f0
+#Dice Fit/Library/Artifacts/a6/a6671c15409bf0b22e927bc5d063170b
