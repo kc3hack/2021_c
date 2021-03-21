@@ -84,7 +84,8 @@ public class pNumSelect : MonoBehaviour
             preclickedGameObject = clickedP;
         }
 
-        clickedP.GetComponent<Renderer>().material.color = Color.cyan;
+        //clickedP.GetComponent<Renderer>().material.color = Color.cyan;
+        clickedP.GetComponent<Renderer>().material.color = new Color(230f / 255f, 230f / 255f, 250f / 255f); ;
         //Debug.Log(clickedP);
     }
 
