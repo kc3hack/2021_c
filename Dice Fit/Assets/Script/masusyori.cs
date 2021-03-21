@@ -60,26 +60,45 @@ public class masusyori : MonoBehaviour
         switch (kindOfEvent)
         {
             case KindOfEvent.blue:
+                int menurand1 = Random.Range(1, 4);
                 //青mass
-                text.text = playernumber + "は青マスに止まりました";
+                if (menurand1 == 1)
+                {
+                    text.text = playernumber + "は青マスに止まりました\n腕立て伏せ10回";
+                } else if(menurand1 == 2) {
+                    text.text = playernumber + "は青マスに止まりました\nスクワット20回";
+                } else {
+                    text.text = playernumber + "は青マスに止まりました\n腹筋20回";
+                }
                 break;
             case KindOfEvent.red:
+                int menurand2 = Random.Range(1, 4);
                 //赤mass
-                text.text = playernumber + "は赤マスに止まりました";
+                if (menurand2 == 1)
+                {
+                    text.text = playernumber + "は赤マスに止まりました\n腕立て伏せ30回";
+                }
+                else if (menurand2 == 2)
+                {
+                    text.text = playernumber + "は赤マスに止まりました\nランジ20回";
+                }
+                else
+                {
+                    text.text= playernumber + "は赤マスに止まりました\n腹筋50回";
+                }
                 break;
             case KindOfEvent.yellow:
                 //黄mass
-                text.text = playernumber + "は黄マスに止まりました";
                 //ここから沼
                 int itemrand = Random.Range(0, 100);
                 if (itemrand > 50)
                 {
                     sai123[playernumber]++;
-                    text.text = playernumber + "は一二三賽を手に入れた";
+                    text.text = playernumber + "は黄マスに止まりました\n一二三賽を手に入れた";
                 }else
                 {
                     sai456[playernumber]++;
-                    text.text = playernumber + "は四五六賽を手に入れた";
+                    text.text = playernumber + "は黄マスに止まりました\n四五六賽を手に入れた";
                 }
 
 
