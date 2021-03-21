@@ -25,8 +25,8 @@ public class Load_Stage_Button : MonoBehaviour
 
         if (isSelected == true)
         {
-            //SceneManager.LoadScene("PlayerMovement");
-            SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene("PlayerMovement");
+            //SceneManager.LoadScene("GameScene");
         }
 
     }
