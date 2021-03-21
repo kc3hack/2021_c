@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     bool ダイス振れる;
     public int[] sai123;
     public int[] sai456;
+    public GameObject[] RankingPlayer;//プレイヤー順位
+    int ranking = 0;//順位
 
     private int tempDiceValue;//出たダイスの目
     [SerializeField] Text playerInfomationText;
@@ -42,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         GoalPlayer = new bool[Players.Length];
         sai123 = new int[Players.Length];
         sai456 = new int[Players.Length];
+        RankingPlayer = new GameObject[AllPlayers.Length];
     }
 
     public int ChangePlayer (int currentPlayer,int NumPlayer)//プレイヤー交代
@@ -81,13 +85,19 @@ public class PlayerMovement : MonoBehaviour
             positionTmp = currentMasuIndex[currentPlayer];
             currentMasuIndex[currentPlayer] += tempDiceValue;//位置情報の更新
             yield return MovePlayer();//
-        if(currentMasuIndex[currentPlayer] >= 28)
+        if(currentMasuIndex[currentPlayer] >= 27)
         {
             Debug.Log ("GOOOOOOOOOOOOOAL!!!!!!!");
             //Vector2 tmp = MassGameObjects[27].transform.position;
             //Players[currentPlayer].transform.position = tmp;
             GoalPlayer[currentPlayer] = true;
+            RankingPlayer[ranking] = Players[currentPlayer];
+            ranking += 1;
             currentMasuIndex[currentPlayer] = 27;
+            if(ranking == Players.Length)
+            {
+                SceneManager.LoadScene("Result");
+            }
         }
         //ここからマスのイベント開始！！！
         Debug.Log(currentPlayer);
@@ -128,6 +138,8 @@ public class PlayerMovement : MonoBehaviour
     public void GoEvent(int dnum)
     {
         tempDiceValue = dnum;
+
+    
 
         if (ダイス振れる)
         {
