@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
 
     private int tempDiceValue;//出たダイスの目
     [SerializeField] Text playerInfomationText;
+    public Button Itemtukau;
+    public Button SaiButton123;
+    public Button SaiButton456;
     public Text SaiText123;
     public Text SaiText456;
 
@@ -27,8 +30,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {   
         ダイス振れる = true;
-        Players = new GameObject[pNumSelect.GetPlayerNum()];
-        for (int i = 0; i < pNumSelect.GetPlayerNum(); i++)
+        Players = new GameObject[3];
+        for (int i = 0; i < 3; i++)
         {
             Players[i] = AllPlayers[i];
             Players[i].SetActive(true);

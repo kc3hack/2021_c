@@ -4531,6 +4531,9 @@ MonoBehaviour:
   sai123: 
   sai456: 
   playerInfomationText: {fileID: 1468881003}
+  Itemtukau: {fileID: 645339488}
+  SaiButton123: {fileID: 1735040362}
+  SaiButton456: {fileID: 1600879178}
   SaiText123: {fileID: 1672050375}
   SaiText456: {fileID: 1570781086}
 --- !u!1001 &1861758783
