@@ -32,13 +32,17 @@ public class masusyori : MonoBehaviour
         switch (kindOfEvent)
         {
             case KindOfEvent.blue:
-                sp.color = blue;
+                //sp.color = blue;
+                sp.color = new Color(132f / 255f, 231f / 255f, 201f / 255f);
+                
                 break;
             case KindOfEvent.red:
-                sp.color = red;
+                //sp.color = red;
+                sp.color = new Color(254f / 255f, 107f / 255f, 0f / 255f);
                 break;
             case KindOfEvent.yellow:
-                sp.color = yellow;
+                //sp.color = yellow;
+                sp.color = new Color(254f / 255f, 215f / 255f, 0f / 255f);
                 break;
             case KindOfEvent.goal:
                 sp.color = goal;
