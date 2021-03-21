@@ -120,15 +120,15 @@ public class Dice_Roll : MonoBehaviour
 
     public void ShowWindow(){
         ItemSelectWindow.SetActive(true);
-        playerMovement.SaiText123.text = "123sai ×" + playerMovement.sai123[playerMovement.currentPlayer];
-        playerMovement.SaiText456.text = "456sai ×" + playerMovement.sai456[playerMovement.currentPlayer];
+        playerMovement.SaiText123.text =  "123sai (" + playerMovement.sai123[playerMovement.currentPlayer] + ")";
+        playerMovement.SaiText456.text = "456sai (" + playerMovement.sai456[playerMovement.currentPlayer] + ")";
         if (playerMovement.sai123[playerMovement.currentPlayer] <= 0)
         {
             playerMovement.SaiButton123.enabled = false;
             playerMovement.SaiText123.color = new Color(0.2f,0.2f,0.2f,0.5f);
         }else{
             playerMovement.SaiButton123.enabled = true;
-            playerMovement.SaiText123.color = new Color(0.2f,1f,0.2f,1);
+            playerMovement.SaiText123.color = new Color(132/255.0f,231/255.0f,201/255.0f,1);
         }
         if (playerMovement.sai456[playerMovement.currentPlayer] <= 0)
         {
@@ -136,7 +136,7 @@ public class Dice_Roll : MonoBehaviour
             playerMovement.SaiText456.color = new Color(0.2f,0.2f,0.2f,0.5f);
         }else{
             playerMovement.SaiButton456.enabled = true;
-            playerMovement.SaiText456.color = new Color(0.2f,1f,0.2f,1);
+            playerMovement.SaiText456.color = new Color(132/255.0f,231/255.0f,201/255.0f,1);
         }
     }
 
