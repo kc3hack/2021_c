@@ -130,4 +130,4 @@ MonoBehaviour:
   red: {r: 0, g: 0, b: 0, a: 0}
   yellow: {r: 0, g: 0, b: 0, a: 0}
   goal: {r: 0, g: 0, b: 0, a: 0}
-  start: {r: 0, g: 1, b: 0.9380019, a: 1}
+  start: {r: 1, g: 1, b: 1, a: 1}
