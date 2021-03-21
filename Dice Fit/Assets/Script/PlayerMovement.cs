@@ -30,8 +30,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {   
         ダイス振れる = true;
-        Players = new GameObject[3];
-        for (int i = 0; i < 3; i++)
+        Players = new GameObject[pNumSelect.GetPlayerNum()];
+        for (int i = 0; i < pNumSelect.GetPlayerNum(); i++)
         {
             Players[i] = AllPlayers[i];
             Players[i].SetActive(true);
@@ -92,8 +92,7 @@ public class PlayerMovement : MonoBehaviour
         //ここからマスのイベント開始！！！
         Debug.Log(currentPlayer);
         Debug.Log(currentMasuIndex[currentPlayer]);
-        Debug.Log("0:" + currentMasuIndex[0]);
-        Debug.Log("1:" + currentMasuIndex[1]);
+        //Debug.Log("0:" + currentMasuIndex[0]);
         MassGameObjects[currentMasuIndex[currentPlayer]].GetComponent<masusyori>().ActiveCellEvent(this, currentPlayer,playerInfomationText,sai123,sai456);
         Debug.Log(currentPlayer + "の一二三" + sai123[currentPlayer]);
         Debug.Log(currentPlayer + "の四五六" +sai456[currentPlayer]);
