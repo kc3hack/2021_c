@@ -85,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
             positionTmp = currentMasuIndex[currentPlayer];
             currentMasuIndex[currentPlayer] += tempDiceValue;//位置情報の更新
             yield return MovePlayer();//
-        if(currentMasuIndex[currentPlayer] >= 27)
+        if(currentMasuIndex[currentPlayer] >= 28)
         {
             Debug.Log ("GOOOOOOOOOOOOOAL!!!!!!!");
             //Vector2 tmp = MassGameObjects[27].transform.position;

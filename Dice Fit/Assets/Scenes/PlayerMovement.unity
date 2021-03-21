@@ -3688,10 +3688,11 @@ MonoBehaviour:
   currentPlayer: 0
   sai123: 
   sai456: 
+  RankingPlayer: []
   playerInfomationText: {fileID: 289171936}
-  Itemtukau: {fileID: 0}
-  SaiButton123: {fileID: 0}
-  SaiButton456: {fileID: 0}
+  Itemtukau: {fileID: 1829723958}
+  SaiButton123: {fileID: 848581673}
+  SaiButton456: {fileID: 244004805}
   SaiText123: {fileID: 276677779}
   SaiText456: {fileID: 791640645}
 --- !u!4 &897780573
